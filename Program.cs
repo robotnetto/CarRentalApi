@@ -1,5 +1,6 @@
-using CarRentalApi.Data;
+﻿using CarRentalApi.Data;
 using Microsoft.EntityFrameworkCore;
+using CarRentalApi.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 

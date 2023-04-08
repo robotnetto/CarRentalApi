@@ -1,5 +1,7 @@
 ﻿using CarRentalApi.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.OpenApi;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace CarRentalApi.Data
 {
@@ -43,4 +45,6 @@ namespace CarRentalApi.Data
             await context.SaveChangesAsync();
         }
     }
+
+
 }
