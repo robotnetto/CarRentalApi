@@ -2,10 +2,10 @@
 
 namespace CarRentalApi.Data
 {
-    public interface ICarCategoryRepository
+    public interface ICarCategory
     {
         Task CreateAsync(CarCategory carCategory);
-        Task DeleteAsync(CarCategory carCategory);
+        Task DeleteAsync(int id);
         Task<IEnumerable<CarCategory>> GetAllAsync();
         Task<CarCategory> GetByIdAsync(int id);
         Task<IEnumerable<CarCategory>> GetSearchedAsync(string search);

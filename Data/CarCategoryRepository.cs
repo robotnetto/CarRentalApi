@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CarRentalApi.Data
 {
-    public class CarCategoryRepository : ICarCategoryRepository
+    public class CarCategoryRepository : ICarCategory
     {
         private readonly ApiContext context;
 
@@ -18,10 +18,15 @@ namespace CarRentalApi.Data
             await context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(CarCategory carCategory)
+        public async Task DeleteAsync(int id)
         {
-            context.Categories.Remove(carCategory);
-            await context.SaveChangesAsync();
+            var carCategoryiId = await GetByIdAsync(id);
+            if (carCategoryiId != null)
+            {
+                context.Categories.Remove(carCategoryiId);
+                await context.SaveChangesAsync();
+            }
+            
         }
 
         public async Task<IEnumerable<CarCategory>> GetAllAsync()

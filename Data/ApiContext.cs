@@ -10,7 +10,7 @@ namespace CarRentalApi.Data
         
         public DbSet<Car> Cars { get; set; } 
         public DbSet<Booking> Bookings { get; set; }
-        public DbSet<CarCategory> Categories { get; set; }
+        public DbSet<Model.CarCategory> Categories { get; set; }
         public DbSet<User> Users { get; set; }
       
     }

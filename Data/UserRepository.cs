@@ -37,7 +37,7 @@ namespace CarRentalApi.Data
         public async Task<User> GetByIdAsync(int? id)
         {
             var tempUser = await context.Users.FirstOrDefaultAsync(x => x.UserId == id);
-            return tempUser;
+            return tempUser!;
         }
         public async Task UpdateAsync(User user)
         {

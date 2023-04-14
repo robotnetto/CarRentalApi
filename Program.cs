@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<ICarRepository, CarRepository>();
-builder.Services.AddTransient<ICarCategoryRepository, CarCategoryRepository>();
+builder.Services.AddTransient<ICarCategory, CarCategoryRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IBookingRepository, BookingRepository>();
 

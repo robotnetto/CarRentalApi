@@ -17,10 +17,15 @@ namespace CarRentalApi.Data
             await apiContext.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(Car car)
+        public async Task DeleteAsync(int id)
         {
-            apiContext.Cars.Remove(car);
-            await apiContext.SaveChangesAsync();
+            var carId = await GetByIdAsync(id);
+            if (carId != null)
+            {
+                 apiContext.Cars.Remove(carId);
+                 await apiContext.SaveChangesAsync();
+
+            }
         }
 
         public async Task<IEnumerable<Car>> GetAllAsync()
@@ -28,7 +33,7 @@ namespace CarRentalApi.Data
             return await apiContext.Cars.OrderBy(c => c.CarId).ToListAsync();
         }
 
-        public async Task<Car> GetByIdAsync(int id)
+        public async Task<Car> GetByIdAsync(int? id)
         {
             return await apiContext.Cars.FirstOrDefaultAsync(c => c.CarId == id);
         }
