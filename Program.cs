@@ -14,6 +14,7 @@ builder.Services.AddTransient<ICarRepository, CarRepository>();
 builder.Services.AddTransient<ICarCategory, CarCategoryRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IBookingRepository, BookingRepository>();
+builder.Services.AddAuthentication().AddJwtBearer();
 
 var app = builder.Build();
 

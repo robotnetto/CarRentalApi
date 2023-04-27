@@ -1,5 +1,6 @@
 ﻿using CarRentalApi.Data;
 using CarRentalApi.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -9,6 +10,7 @@ namespace CarRentalApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CarCategoryController : ControllerBase
     {
         private readonly ICarCategory carCategoryRepository;
